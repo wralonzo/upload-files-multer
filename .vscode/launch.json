@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Next.js: dev full stack",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run start:dev",
+        "console": "integratedTerminal",
+        "serverReadyAction": {
+          "pattern": "started server on .+, url: (https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome"
+        }
+      },
+      {
+        "name": "Next.js: local full stack",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run start:local",
+        "console": "integratedTerminal",
+        "serverReadyAction": {
+          "pattern": "started server on .+, url: (https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome"
+        }
+      },
+      {
+        "name": "Next.js: production full stack",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run start:production",
+        "console": "integratedTerminal",
+        "serverReadyAction": {
+          "pattern": "started server on .+, url: (https?://.+)",
+          "uriFormat": "%s",
+          "action": "debugWithChrome"
+        }
+      }
+    ]
+  }
+  
