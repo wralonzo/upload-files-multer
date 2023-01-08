@@ -8,14 +8,18 @@ import { createFile } from 'src/helper/file-filter';
 @Injectable()
 export class FilesService {
   public async create(name: string) {
-    const fileName = `${ uuid() }.png`;
-    const bufferAttachment = Buffer.from(
+
+
+    const bufferImage = Buffer.from(
       name.replace(/^data:image\/\w+;base64,/, ''),
       'base64',
     );
+    const mimeType = name.match(/[^:]\w+\/[\w-+\d.]+(?=;|,)/)[0];
+    const fileExtension = mimeType.split('/')[1];
+    const fileName = `${ uuid() }.${fileExtension}`;
 
     const path = join(__dirname, '../../static/uploads')
-    await createFile(path, fileName, bufferAttachment);
+    await createFile(path, fileName, bufferImage);
   }
 
   findAll() {
